@@ -1,22 +1,87 @@
-# testing-lecture
+# Testing Lecture
 
-## TDD
+## 1. **Introduction to Testing**
+- Зачем писать тесты?
+    - Ускорение рефакторинга.
+    - Минимизация багов.
+    - Документация поведения кода.
+- Тестирование как часть культуры разработки.
 
-## Stubs vs Mocks
-https://martinfowler.com/articles/mocksArentStubs.html
+---
 
-## Unit vs Integrated
+## 2. **Test-Driven Development (TDD)**
+- Принципы TDD:
+    - **Red** (Написание провального теста).
+    - **Green** (Реализация функциональности, чтобы тест прошёл).
+    - **Refactor** (Оптимизация кода без изменения поведения).
+- Практическая демонстрация:
+    - Простая функция (например, калькулятор).
+- Преимущества и вызовы:
+    - Ускоряет написание стабильного кода.
+    - Может быть сложным для legacy проектов.
 
-https://blog.thecodewhisperer.com/permalink/integrated-tests-are-a-scam
-https://martinfowler.com/articles/mocksArentStubs.html#ClassicalAndMockistTesting
+---
 
-покрывает один законченный элемент (функция / чистый статический метод / класс)
-in-process, т.е. не выходит за рамки процесса (не ходит в базу/файлы)
-все зависимости замоканы либо застабаны (не берём ничего из приложения/контейнера)
+## 3. **Stubs vs Mocks**
+- Разница между Stub и Mock:
+    - **Stub**: Заглушка, возвращающая предсказуемый результат (фокус на данных).
+    - **Mock**: Проверяет вызовы (фокус на поведении).
+- Подходы к тестированию:
+    - **Classical**: Использует Stubs, акцент на проверке конечного результата.
+    - **Mockist**: Использует Mocks, проверяя взаимодействие объектов.
+- Ссылки на статьи:
+    - [Mocks Aren't Stubs](https://martinfowler.com/articles/mocksArentStubs.html).
+    - [Classical vs. Mockist Testing](https://martinfowler.com/articles/mocksArentStubs.html#ClassicalAndMockistTesting).
+- Специфика тестирования финальных классов
 
-https://qualityisspeed.blogspot.com/2014/09/beyond-solid-dependency-elimination.html
-https://martinfowler.com/articles/mocksArentStubs.html#ClassicalAndMockistTesting
+---
 
-## Advanced
-https://infection.github.io/
+## 4. **Unit vs Integrated Tests**
+- Unit-тесты:
+    - Тестирование одного законченного элемента: функции, метода, класса.
+    - **In-process**: Не взаимодействуют с внешними зависимостями (база данных, файлы).
+    - Все зависимости замоканы или застабаны.
+- Интеграционные тесты:
+    - Проверка взаимодействия между компонентами системы.
+    - Проверяют связь между реальными зависимостями.
+- Дискуссия:
+    - [Integrated Tests Are a Scam](https://blog.thecodewhisperer.com/permalink/integrated-tests-are-a-scam).
+    - [Dependency Elimination](https://qualityisspeed.blogspot.com/2014/09/beyond-solid-dependency-elimination.html).
 
+---
+
+## 5. **Metrics**
+
+### Code Coverage
+- Что такое покрытие тестами?
+    - **Логическое покрытие**: Все ли ветки кода проверены?
+    - Почему 100% покрытия не означает отсутствие багов.
+- Инструменты:
+    - PHPUnit Coverage Report.
+
+### Mutation Score Indicator (MSI)
+- Что это такое:
+    - MSI показывает, насколько ваши тесты эффективны в нахождении багов.
+    - Использует мутационное тестирование.
+- Инструмент:
+    - [Infection](https://infection.github.io/).
+
+---
+
+## 6. **Practical Testing in PHP**
+- Примеры инструментов:
+    - **PHPUnit**: Базовый инструмент для модульного тестирования.
+    - **Codeception**: Подходит для E2E и интеграционного тестирования.
+    - **Pest**: Современный и лаконичный фреймворк для тестирования.
+    - **Faker**: Генерация тестовых данных.
+
+---
+
+## 7. **Conclusion**
+- Основные выводы:
+    - Тесты — это инвестиция в качество.
+    - Не бывает универсального подхода: комбинируйте виды тестов.
+- Рекомендации для начинающих:
+    - Начинайте с Unit-тестов.
+    - Используйте TDD для небольших задач.
+    - Экспериментируйте с инструментами, чтобы найти подходящий.

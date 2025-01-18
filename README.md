@@ -31,6 +31,7 @@
   - Проверяют связь между реальными зависимостями.
 - Ссылки на статьи:
   - [Integrated Tests Are a Scam](https://blog.thecodewhisperer.com/permalink/integrated-tests-are-a-scam).
+- e2e
 
 ---
 
